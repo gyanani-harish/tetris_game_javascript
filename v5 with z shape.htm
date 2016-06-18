@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+ <script>
+var GAME_HEIGHT=400;
+var GAME_WIDTH=750;
+var BOX_HEIGHT=25;
+var BOX_WIDTH=25;
+var timer =null;
+var SHAPE_ALIGN=1;
+  function play()
+  {
+     var top1= parseInt(document.getElementById('a1').style.top);
+     var top2= parseInt(document.getElementById('a2').style.top);
+     var top3= parseInt(document.getElementById('a3').style.top);
+     var top4= parseInt(document.getElementById('a4').style.top);
+
+     if ((top1+75)<= GAME_HEIGHT)
+     {
+     document.getElementById('a1').style.top= top1+25+'px';
+     document.getElementById('a2').style.top= top2+25+"px";
+     document.getElementById('a3').style.top= top3+25+"px";
+     document.getElementById('a4').style.top= top4+25+"px"; }
+  }
+   function play_button()
+ {
+    timer=setInterval(function(){play()}, 400);
+ }
+ function stop_button()
+ {
+    clearInterval(timer);
+ }
+ function rotate_button()
+ {
+            var top1= parseInt(document.getElementById('a1').style.top);
+            var left1= parseInt(document.getElementById('a1').style.left);
+             var top2= parseInt(document.getElementById('a2').style.top);
+            var left2= parseInt(document.getElementById('a2').style.left);
+            var top3= parseInt(document.getElementById('a3').style.top);
+            var left3= parseInt(document.getElementById('a3').style.left);
+             var top4= parseInt(document.getElementById('a4').style.top);
+            var left4= parseInt(document.getElementById('a4').style.left);
+           if(SHAPE_ALIGN==1)
+            {
+      document.getElementById('a2').style.top= top2+25+'px';
+
+       document.getElementById('a4').style.top= top4+25+'px';
+
+
+       document.getElementById('a1').style.left= left1+25+"px";
+              document.getElementById('a3').style.left= left3-25+"px";
+
+      document.getElementById('a4').style.left= left4-50+"px";
+
+
+
+     SHAPE_ALIGN=2;
+             }
+             else if(SHAPE_ALIGN==2)
+            {
+
+     document.getElementById('a2').style.top= top2-25+"px";
+
+     document.getElementById('a4').style.top= top4-25+"px";
+
+
+
+         document.getElementById('a1').style.left= left1-25+"px";
+  document.getElementById('a3').style.left= left3+25+"px";
+     document.getElementById('a4').style.left= left4+50+"px";
+     SHAPE_ALIGN=1;
+             }
+
+
+ }
+
+ </script>
+</head>
+
+<body>
+      <div style="height: 400px; width: 750px; background-color: #00FFFF;">
+        <button style="height:25px;width:25px;position:absolute;left:50px;top:50px;" id="a1" >1</button>
+        <button style="height:25px;width:25px;position:absolute;left:75px;top:50px;" id="a2">2</button>
+        <button style="height: 25px; width: 25px; position: absolute; left: 75px; top: 75px;" id="a3">3</button>
+        <button style="height: 25px; width: 25px; position: absolute; left: 100px; top: 75px;" id="a4">4</button>
+         <button style=" position: absolute; left: 200px; top: 200px;" id="a5"  onclick=" play_button()  ";>play</button>
+         <button style=" position: absolute; left: 200px; top: 250px;" id="a6"  onclick=" stop_button()  ";>stop</button>
+          <button style=" position: absolute; left: 200px; top: 250px;" id="a7"  onclick=" rotate_button()  ";>rotate it</button>
+     </div>
+</body>
+
+</html>
+

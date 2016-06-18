@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+ <script>
+var GAME_HEIGHT=400;
+var GAME_WIDTH=750;
+var BOX_HEIGHT=25;
+var BOX_WIDTH=25;
+  function abc()
+  {
+     var a= parseInt(document.getElementById('a1').style.top);
+     if ((a+100)<= GAME_HEIGHT)
+     {
+     document.getElementById('a1').style.top= a+25+'px';
+     document.getElementById('a2').style.top= a+50+"px";
+     document.getElementById('a3').style.top= a+75+"px";
+     document.getElementById('a4').style.top= a+75+"px"; }
+  }
+
+ </script>
+</head>
+
+<body>
+      <div style="height: 400px; width: 750px; background-color: #00FFFF;">
+        <button style="height:25px;width:25px;position:absolute;left:50px;top:50px;" id="a1" ></button>
+        <button style="height:25px;width:25px;position:absolute;left:50px;top:75px;" id="a2"></button>
+        <button style="height: 25px; width: 25px; position: absolute; left: 50px; top: 100px;" id="a3"></button>
+        <button style="height: 25px; width: 25px; position: absolute; left: 75px; top: 100px;" id="a4"></button>
+         <button style=" position: absolute; left: 200px; top: 200px;" id="a5"  onclick=" abc()";>play</button>
+     </div>
+</body>
+
+</html>
